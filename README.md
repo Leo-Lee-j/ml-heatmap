@@ -1,6 +1,7 @@
 # 欢迎使用 ML HeatMap
 
 一个基于 Vue3 + Vite2 + Typescript 的仿造 GitHub 热力图的UI组件。
+![image](https://user-images.githubusercontent.com/34913418/154430134-81e5bffc-206f-4885-bf5a-705c5ddbfcc2.png)
 
 安装：
 
