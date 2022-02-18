@@ -1,7 +1,13 @@
 {
   "name": "ml-heatmap",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
+  "homepage": "https://github.com/Leo-Lee-j/ml-heatmap#readme",
+  "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Leo-Lee-j/ml-heatmap.git"
+  },
   "files": [
     "dist"
   ],

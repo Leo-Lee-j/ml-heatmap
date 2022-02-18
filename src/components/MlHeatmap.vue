@@ -21,6 +21,7 @@
                     effect="dark"
                     :content="handleTipContent(data)"
                     placement="top-start"
+                    :show-after="150"
                 >
                   <div class="date" ref="squareRef" />
                 </el-tooltip>

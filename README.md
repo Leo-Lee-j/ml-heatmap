@@ -18,7 +18,7 @@ import 'ml-heatmap/dist/style.css'
 </script>
 
 <template>
-  <ml-heatmap />
+  <ml-heatmap :data="[]" />
 </template>
 ```
 
@@ -31,7 +31,7 @@ import 'ml-heatmap/dist/style.css'
 | locale       | 语言(中英)<br />e.g. `en` `cn`                               | en                                                      |
 | levelColor   | 等级颜色数组<br />e.g. [x, x, x, x, x]                       | ['#EBEDF0', '#9BE9A8', '#40C463', '#30A14E', '#216E39'] |
 | level        | 等级数组，默认五级，只需填写后四级即可<br />e.g. [1, 2, 3, 4] | [1, 4, 8, 12]                                           |
-| data         | 热力图数据，数据为一年中的所有数据(365/366天的数据)<br />e.g. [<br />{date: '2022-01-12'}, {}<br />} | []                                                      |
+| data         | 热力图数据，数据为一年中的所有数据(365/366天的数据)<br />e.g. [<br />{date: '2022-01-12',<br />count: 1}, ......<br />} | []                                                      |
 
 
 
