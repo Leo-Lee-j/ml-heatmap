@@ -32,8 +32,10 @@
       </div>
     </div>
     <div class="illustration">
-      <div>
-
+      <div class="legend">
+      </div>
+      <div class="title">
+        {{ props.title }}
       </div>
       <div class="legend" v-if="props.illustration">
         <div class="level-desc">{{illustrationFonts[0]}}</div>
@@ -61,6 +63,11 @@ interface Config {
   year?: number,
   // default en (cn/en)
   locale?: string,
+  title?: string,
+  // 有数据提示文本
+  tip1?: string,
+  // 无数据提示文本
+  tip2?: string,
   /**
    * Five level colors, from small to large.
    * e.g. [x, x, x, x, x]
@@ -79,6 +86,9 @@ const props = withDefaults(defineProps<Config>(), {
   illustration: true,
   year: moment().year(),
   locale: 'en',
+  title: '',
+  tip1: '{0} contributions on {1}',
+  tip2: 'No contributions on {1}',
   levelColor: () => ['#EBEDF0', '#9BE9A8', '#40C463', '#30A14E', '#216E39'],
   level: () => [1, 4, 8, 12],
   data: () => []
@@ -217,9 +227,11 @@ const handleTipContent = (dateCount:DateCount) => {
   const count = dateCount.count
   const date = dateCount.date
   if (count > 0) {
-    return count + ' contributions on ' + date
+    // return count + ' contributions on ' + date
+    return props.tip1.replace('{0}', count.toString()).replace('{1}', date)
   } else {
-    return 'No contributions on ' + date
+    // return 'No contributions on ' + date
+    return props.tip2.replace('{0}', count.toString()).replace('{1}', date)
   }
 }
 
@@ -263,13 +275,13 @@ const getYearDays = (year?:number) => {
 init()
 </script>
 <style lang="scss" scoped>
-
 .heat-map {
   max-width: 810px;
   height: 180px;
   background-color: #fff;
   margin: auto;
   padding: 0 0;
+  margin-top: 50px;
   font-size: 12px;
   .container {
     height: 100px;
